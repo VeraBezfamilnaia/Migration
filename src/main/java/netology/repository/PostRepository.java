@@ -2,6 +2,7 @@ package netology.repository;
 
 import netology.model.Post;
 import netology.validator.PostValidator;
+import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Repository
 public class PostRepository {
     private final static int NEW_POST_INDEX = 0;
     private final static int START_POST_INDEX = 1;

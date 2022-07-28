@@ -20,7 +20,7 @@ public class PostController {
         return service.all();
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public Post getById(@PathVariable long id) {
         return service.getById(id);
     }
@@ -30,7 +30,7 @@ public class PostController {
         return service.save(post);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void removeById(@PathVariable long id) {
         service.removeById(id);
     }
