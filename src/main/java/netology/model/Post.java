@@ -3,6 +3,7 @@ package netology.model;
 public class Post {
     private long id;
     private String content;
+    transient private boolean isRemoved;
 
     public Post() {
     }
@@ -26,5 +27,13 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean getIsRemoved() {
+        return isRemoved;
+    }
+
+    public void setRemoved(boolean removed) {
+        isRemoved = removed;
     }
 }
