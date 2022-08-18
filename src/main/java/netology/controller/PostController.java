@@ -4,7 +4,7 @@ import netology.model.Post;
 import netology.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/api/posts")
@@ -16,7 +16,7 @@ public class PostController {
     }
 
     @GetMapping
-    public Set<Post> all() {
+    public Collection<Post> all() {
         return service.all();
     }
 

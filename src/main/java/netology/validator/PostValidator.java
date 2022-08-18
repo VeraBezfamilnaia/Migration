@@ -3,25 +3,14 @@ package netology.validator;
 import netology.exception.NotFoundException;
 import netology.model.Post;
 
-import java.util.Set;
+import java.util.Map;
 
 public class PostValidator {
-    public static Post validate(Set<Post> posts, Post post) {
-        long id = post.getId();
-        for (var existingPost : posts) {
-            if (existingPost.getId() == id) {
-                return existingPost;
-            }
+    public static Post validate(Map<Long, Post> posts, long id) {
+        var existingPost = posts.get(id);
+        if (existingPost != null) {
+            return existingPost;
         }
         throw new NotFoundException("Post with this id wasn't found");
-    }
-
-    public static Post validate(Set<Post> posts, long id) {
-        for (var post : posts) {
-            if (post.getId() == id) {
-                return post;
-            }
-        }
-        throw new NotFoundException("Post weren't found");
     }
 }

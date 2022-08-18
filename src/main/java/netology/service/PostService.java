@@ -5,7 +5,7 @@ import netology.model.Post;
 import netology.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.Collection;
 
 @Service
 public class PostService {
@@ -15,7 +15,7 @@ public class PostService {
         this.repository = repository;
     }
 
-    public Set<Post> all() {
+    public Collection<Post> all() {
         return repository.all();
     }
 
